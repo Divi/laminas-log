@@ -70,7 +70,7 @@ class PsrLoggerAdapter extends PsrAbstractLogger
      * @return void
      * @throws InvalidArgumentException If log level is not recognized.
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, string|\Stringable $message, array $context = []): void
     {
         if (! array_key_exists($level, $this->psrPriorityMap)) {
             throw new InvalidArgumentException(sprintf(
